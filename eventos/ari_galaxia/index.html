@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cristales de la Galaxia · Fortín de las Flores · Julio 2025</title>
+<meta name="description" content="Un retiro de dos días en El Jardín de la Salud, Fortín de las Flores, Veracruz. Guiado por Carlos Martínez Montes, el Guardián de la Peña. 25–26 de Julio 2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --c-forest:  #152018;
+    --c-deep:    #1c2b1f;
+    --c-moss:    #273d2a;
+    --c-stone:   #1e2a20;
+    --c-gold:    #c9a84c;
+    --c-gold-lt: #e0c47a;
+    --c-cream:   #f0ebe0;
+    --c-mist:    #a89f8c;
+    --c-light:   #d8d1c2;
+    --max-w: 1080px;
+    --ease: cubic-bezier(.4,0,.2,1);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--c-forest);
+    color: var(--c-cream);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem clamp(1.5rem, 6vw, 4rem);
+    background: rgba(21,32,24,.85);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(201,168,76,.15);
+  }
+  .nav-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: .75rem; font-weight: 400; letter-spacing: .35em;
+    text-transform: uppercase; color: var(--c-mist);
+    text-decoration: none;
+  }
+  .nav-brand span { color: var(--c-gold); }
+  .nav-actions { display: flex; align-items: center; gap: .8rem; }
+  .nav-back {
+    font-size: .65rem; font-weight: 400; letter-spacing: .15em;
+    text-transform: uppercase; color: var(--c-mist);
+    text-decoration: none;
+    transition: color .25s;
+    white-space: nowrap;
+  }
+  .nav-back:hover { color: var(--c-cream); }
+  @media (max-width: 480px) { .nav-back { display: none; } }
+  .nav-cta {
+    font-size: .7rem; font-weight: 400; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--c-gold);
+    border: 1px solid rgba(201,168,76,.4);
+    padding: .45rem 1.2rem; text-decoration: none;
+    transition: background .3s, color .3s;
+  }
+  .nav-cta:hover { background: var(--c-gold); color: var(--c-forest); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100svh;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    position: relative; overflow: hidden;
+    padding: 0 clamp(1.5rem, 6vw, 4rem) clamp(3rem, 8vh, 6rem);
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(to top, rgba(21,32,24,.97) 25%, rgba(21,32,24,.55) 60%, rgba(21,32,24,.3) 100%),
+      url('https://raw.githubusercontent.com/alexitimia-online/guardian/main/eventos/ari_galaxia/docs/fortin01.jpeg')
+      center / cover no-repeat;
+  }
+  .hero-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 60% 35%, rgba(201,168,76,.07) 0%, transparent 60%);
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 720px; }
+  .hero-eyebrow {
+    font-size: .65rem; font-weight: 400; letter-spacing: .4em;
+    text-transform: uppercase; color: var(--c-gold);
+    margin-bottom: 1.6rem;
+    display: flex; align-items: center; gap: .8rem;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block;
+    width: 2rem; height: 1px; background: var(--c-gold); opacity: .6;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 9vw, 7rem);
+    font-weight: 300; line-height: 1;
+    color: var(--c-cream);
+    margin-bottom: .6rem;
+  }
+  .hero-title em {
+    font-style: italic; color: var(--c-gold-lt);
+  }
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2.2vw, 1.35rem);
+    font-style: italic; font-weight: 300;
+    color: var(--c-mist); margin-bottom: 2.8rem;
+    letter-spacing: .01em;
+  }
+  .hero-meta {
+    display: flex; gap: 2.5rem; flex-wrap: wrap; align-items: center;
+    margin-bottom: 2.5rem;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem; font-weight: 300; line-height: 1;
+    color: var(--c-gold);
+  }
+  .hero-stat-label {
+    font-size: .58rem; letter-spacing: .3em; text-transform: uppercase;
+    color: var(--c-mist); margin-top: .2rem;
+  }
+  .hero-divider {
+    width: 1px; height: 3rem; background: rgba(201,168,76,.25);
+  }
+  .hero-dates {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; font-style: italic; color: var(--c-mist);
+  }
+  .hero-dates strong { color: var(--c-cream); font-style: normal; font-weight: 400; }
+  .hero-btn {
+    display: inline-block;
+    font-size: .7rem; font-weight: 400; letter-spacing: .25em;
+    text-transform: uppercase; text-decoration: none;
+    padding: .9rem 2.4rem;
+    background: var(--c-gold); color: var(--c-forest);
+    transition: background .3s, transform .2s;
+  }
+  .hero-btn:hover { background: var(--c-gold-lt); transform: translateY(-2px); }
+
+  /* ── SCROLL INDICATOR ── */
+  .scroll-hint {
+    position: absolute; bottom: 2rem; right: clamp(1.5rem, 6vw, 4rem);
+    z-index: 2; display: flex; flex-direction: column; align-items: center; gap: .5rem;
+    opacity: .45;
+  }
+  .scroll-hint span {
+    font-size: .58rem; letter-spacing: .25em; text-transform: uppercase;
+    color: var(--c-mist); writing-mode: vertical-rl;
+  }
+  .scroll-hint-line {
+    width: 1px; height: 3rem; background: var(--c-mist);
+    animation: scrollpulse 2s ease-in-out infinite;
+  }
+  @keyframes scrollpulse {
+    0%,100% { transform: scaleY(1); opacity: .45; }
+    50% { transform: scaleY(.5); opacity: .2; }
+  }
+
+  /* ── QUOTE BAND ── */
+  .quote-band {
+    background: var(--c-moss);
+    border-top: 1px solid rgba(201,168,76,.15);
+    border-bottom: 1px solid rgba(201,168,76,.15);
+    padding: 4rem clamp(1.5rem, 8vw, 6rem);
+    text-align: center;
+  }
+  .quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-style: italic; font-weight: 300;
+    color: var(--c-cream); line-height: 1.6;
+    max-width: 680px; margin: 0 auto 1.2rem;
+  }
+  .quote-attr {
+    font-size: .65rem; letter-spacing: .3em; text-transform: uppercase;
+    color: var(--c-gold); font-style: normal;
+  }
+
+  /* ── SECTION WRAPPER ── */
+  section { padding: clamp(4rem, 10vh, 7rem) clamp(1.5rem, 6vw, 4rem); }
+  .section-inner { max-width: var(--max-w); margin: 0 auto; }
+  .section-label {
+    font-size: .6rem; letter-spacing: .4em; text-transform: uppercase;
+    color: var(--c-gold); margin-bottom: 1.2rem;
+    display: flex; align-items: center; gap: .8rem;
+  }
+  .section-label::after {
+    content: ''; flex: 1; max-width: 3rem; height: 1px;
+    background: rgba(201,168,76,.4);
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-weight: 300; line-height: 1.15;
+    color: var(--c-cream); margin-bottom: 1.5rem;
+  }
+  .section-title em { font-style: italic; color: var(--c-gold-lt); }
+  .section-body {
+    font-size: .95rem; color: var(--c-mist); line-height: 1.9;
+    max-width: 560px;
+  }
+
+  /* ── EXPERIENCIA ── */
+  .exp-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: center;
+  }
+  .exp-img {
+    position: relative; aspect-ratio: 3/4; overflow: hidden;
+  }
+  .exp-img img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: saturate(.85) brightness(.92);
+    transition: transform .8s var(--ease);
+  }
+  .exp-img:hover img { transform: scale(1.04); }
+  .exp-img::before {
+    content: ''; position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(135deg, rgba(201,168,76,.1) 0%, transparent 50%);
+  }
+  .exp-img-border {
+    position: absolute; inset: 12px; border: 1px solid rgba(201,168,76,.2);
+    z-index: 2; pointer-events: none;
+  }
+
+  /* ── VIDEO EMBED ── */
+  .video-section {
+    background: var(--c-deep);
+    border-top: 1px solid rgba(201,168,76,.1);
+    border-bottom: 1px solid rgba(201,168,76,.1);
+    padding: clamp(3rem, 7vh, 5rem) clamp(1.5rem, 6vw, 4rem);
+  }
+  .video-inner {
+    max-width: var(--max-w); margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: center;
+  }
+  .video-wrap {
+    position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+    border: 1px solid rgba(201,168,76,.2);
+  }
+  .video-wrap iframe {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    border: none;
+  }
+  .video-text { }
+  .video-text .section-body { max-width: 100%; }
+
+  /* ── INVERSIÓN ── */
+  .inversion-wrap {
+    background: var(--c-deep);
+    border: 1px solid rgba(201,168,76,.18);
+    padding: clamp(2.5rem, 5vw, 4rem);
+  }
+  .price-display {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 7vw, 5rem);
+    font-weight: 300; color: var(--c-gold);
+    line-height: 1; margin-bottom: .4rem;
+  }
+  .price-label {
+    font-size: .65rem; letter-spacing: .3em; text-transform: uppercase;
+    color: var(--c-mist); margin-bottom: 2.5rem;
+  }
+  .includes-list {
+    list-style: none; display: flex; flex-direction: column; gap: .9rem;
+    margin-bottom: 2.5rem;
+  }
+  .includes-list li {
+    display: flex; align-items: flex-start; gap: .8rem;
+    font-size: .88rem; color: var(--c-light); line-height: 1.5;
+  }
+  .includes-list li::before {
+    content: '—'; color: var(--c-gold); flex-shrink: 0;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .inv-note {
+    font-size: .78rem; color: var(--c-mist);
+    border-top: 1px solid rgba(201,168,76,.12);
+    padding-top: 1.5rem; font-style: italic;
+  }
+
+  /* ── PROGRAMA ── */
+  .programa-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 1px; background: rgba(201,168,76,.1);
+    border: 1px solid rgba(201,168,76,.1);
+  }
+  .dia-card {
+    background: var(--c-deep);
+    padding: 2.5rem 2rem;
+    transition: background .3s;
+  }
+  .dia-card:hover { background: var(--c-moss); }
+  .dia-card.featured {
+    background: var(--c-moss);
+    position: relative;
+  }
+  .dia-card.featured::before {
+    content: 'SÁBADO 25 · DÍA PRINCIPAL';
+    position: absolute; top: 0; left: 0; right: 0;
+    background: var(--c-gold);
+    color: var(--c-forest);
+    font-size: .58rem; letter-spacing: .3em; text-transform: uppercase;
+    text-align: center; padding: .4rem;
+    font-weight: 500;
+  }
+  .dia-card.featured { padding-top: 3.5rem; }
+  .dia-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem; font-weight: 300; color: rgba(201,168,76,.25);
+    line-height: 1; margin-bottom: .3rem;
+  }
+  .dia-name {
+    font-size: .65rem; letter-spacing: .25em; text-transform: uppercase;
+    color: var(--c-gold); margin-bottom: 1.8rem;
+  }
+  .dia-items { list-style: none; display: flex; flex-direction: column; gap: 1.1rem; }
+  .dia-item-time {
+    font-size: .6rem; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--c-gold); opacity: .7; margin-bottom: .15rem;
+  }
+  .dia-item-text {
+    font-size: .85rem; color: var(--c-light); line-height: 1.45;
+  }
+  .dia-item-sub {
+    font-size: .75rem; color: var(--c-mist); font-style: italic;
+  }
+
+  /* ── LUGAR FULL ── */
+  .lugar-section {
+    position: relative; min-height: 55vh;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+    padding: clamp(4rem, 10vh, 7rem) clamp(1.5rem, 6vw, 4rem);
+  }
+  .lugar-bg {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(rgba(21,32,24,.72), rgba(21,32,24,.72)),
+      url('https://raw.githubusercontent.com/alexitimia-online/guardian/main/eventos/ari_galaxia/docs/fortin04.jpeg')
+      center / cover no-repeat;
+  }
+  .lugar-content { position: relative; z-index: 2; text-align: center; }
+  .lugar-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-weight: 300; font-style: italic;
+    color: var(--c-cream); margin-bottom: .8rem;
+  }
+  .lugar-sub {
+    font-size: .7rem; letter-spacing: .3em; text-transform: uppercase;
+    color: var(--c-gold);
+  }
+  .lugar-link {
+    display: inline-block; margin-top: 1.5rem;
+    font-size: .65rem; letter-spacing: .25em; text-transform: uppercase;
+    color: var(--c-gold); border: 1px solid rgba(201,168,76,.4);
+    padding: .5rem 1.4rem; text-decoration: none;
+    transition: background .3s, color .3s;
+  }
+  .lugar-link:hover { background: var(--c-gold); color: var(--c-forest); }
+
+  /* ── HOSPEDAJE ── */
+  .hospedaje-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 3rem; align-items: center;
+  }
+  .amenidades {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1px; background: rgba(201,168,76,.1);
+    margin-top: 2rem;
+  }
+  .amenidad {
+    background: var(--c-deep);
+    padding: 1.2rem 1.5rem;
+    font-size: .82rem; color: var(--c-light);
+    display: flex; align-items: center; gap: .6rem;
+  }
+  .amenidad-dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--c-gold); flex-shrink: 0;
+  }
+
+  /* ── POLÍTICAS ── */
+  .politicas-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+  }
+  .politica-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; color: var(--c-gold-lt);
+    margin-bottom: 1.2rem; font-style: italic;
+  }
+  .politica-list { list-style: none; display: flex; flex-direction: column; gap: .7rem; }
+  .politica-list li {
+    font-size: .85rem; color: var(--c-mist); line-height: 1.6;
+    padding-left: 1.2rem; position: relative;
+  }
+  .politica-list li::before {
+    content: '—'; position: absolute; left: 0;
+    color: rgba(201,168,76,.5); font-family: 'Cormorant Garamond', serif;
+  }
+
+  /* ── CTA FINAL ── */
+  .cta-final {
+    background: var(--c-moss);
+    border-top: 1px solid rgba(201,168,76,.15);
+    text-align: center;
+    padding: clamp(5rem, 12vh, 9rem) clamp(1.5rem, 6vw, 4rem);
+  }
+  .cta-final .section-title { max-width: 600px; margin: 0 auto 1.2rem; }
+  .cta-final-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem; font-style: italic;
+    color: var(--c-mist); margin-bottom: 2.5rem;
+  }
+  .cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: .6rem;
+    font-size: .72rem; font-weight: 400; letter-spacing: .22em;
+    text-transform: uppercase; text-decoration: none;
+    padding: 1rem 2.6rem;
+    background: var(--c-gold); color: var(--c-forest);
+    transition: background .3s, transform .2s;
+  }
+  .btn-primary:hover { background: var(--c-gold-lt); transform: translateY(-2px); }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: .6rem;
+    font-size: .72rem; font-weight: 400; letter-spacing: .22em;
+    text-transform: uppercase; text-decoration: none;
+    padding: 1rem 2.6rem;
+    border: 1px solid rgba(201,168,76,.4); color: var(--c-gold);
+    background: none; cursor: pointer;
+    transition: background .3s, color .3s;
+  }
+  .btn-secondary:hover { background: rgba(201,168,76,.08); }
+  .cta-contacto {
+    margin-top: 2.5rem;
+    font-size: .8rem; color: var(--c-mist);
+    display: flex; flex-direction: column; gap: .4rem; align-items: center;
+  }
+  .cta-contacto strong { color: var(--c-cream); font-weight: 400; }
+  .cta-contacto a { color: var(--c-gold); text-decoration: none; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--c-forest);
+    border-top: 1px solid rgba(201,168,76,.1);
+    padding: 2rem clamp(1.5rem, 6vw, 4rem);
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: .7rem; letter-spacing: .3em;
+    text-transform: uppercase; color: var(--c-mist);
+    text-decoration: none;
+  }
+  .footer-brand span { color: var(--c-gold); }
+  .footer-copy {
+    font-size: .65rem; color: rgba(168,159,140,.5);
+    letter-spacing: .1em;
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-up {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity .7s var(--ease), transform .7s var(--ease);
+  }
+  .fade-up.visible { opacity: 1; transform: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .exp-grid,
+    .hospedaje-grid,
+    .politicas-grid,
+    .video-inner { grid-template-columns: 1fr; }
+    .programa-grid { grid-template-columns: 1fr; }
+    .amenidades { grid-template-columns: 1fr; }
+    .hero-meta { gap: 1.5rem; }
+    .inversion-wrap { padding: 2rem 1.5rem; }
+  }
+
+  /* ── FAQs ── */
+  .faq-list { display: flex; flex-direction: column; gap: 0; }
+  .faq-item { border-bottom: 1px solid rgba(201,168,76,.12); }
+  .faq-item:first-child { border-top: 1px solid rgba(201,168,76,.12); }
+  .faq-q {
+    width: 100%; background: none; border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+    padding: 1.6rem 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2vw, 1.2rem); font-weight: 400;
+    color: var(--c-cream); text-align: left;
+    transition: color .3s;
+  }
+  .faq-q:hover { color: var(--c-gold-lt); }
+  .faq-q.open { color: var(--c-gold-lt); }
+  .faq-icon {
+    font-size: 1.4rem; color: var(--c-gold); flex-shrink: 0;
+    transition: transform .35s var(--ease);
+    font-weight: 300; line-height: 1;
+  }
+  .faq-q.open .faq-icon { transform: rotate(45deg); }
+  .faq-a {
+    font-size: .88rem; color: var(--c-mist); line-height: 1.85;
+    max-height: 0; overflow: hidden;
+    transition: max-height .45s var(--ease), padding .35s var(--ease);
+    padding-bottom: 0;
+  }
+  .faq-a.open { max-height: 350px; padding-bottom: 1.8rem; }
+
+  /* ── MODAL ── */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; z-index: 200;
+    background: rgba(15,24,17,.85);
+    backdrop-filter: blur(8px);
+    align-items: center; justify-content: center;
+    padding: 1.5rem;
+  }
+  .modal-overlay.active { display: flex; }
+  .modal-box {
+    background: var(--c-deep);
+    border: 1px solid rgba(201,168,76,.25);
+    padding: clamp(2rem, 5vw, 3.5rem);
+    max-width: 440px; width: 100%;
+    position: relative;
+    animation: modalIn .35s var(--ease);
+  }
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(20px) scale(.97); }
+    to   { opacity: 1; transform: none; }
+  }
+  .modal-close {
+    position: absolute; top: 1.2rem; right: 1.4rem;
+    background: none; border: none; cursor: pointer;
+    font-size: 1.4rem; color: var(--c-mist); line-height: 1;
+    transition: color .2s;
+  }
+  .modal-close:hover { color: var(--c-cream); }
+  .modal-label {
+    font-size: .6rem; letter-spacing: .35em; text-transform: uppercase;
+    color: var(--c-gold); margin-bottom: 1rem;
+  }
+  .modal-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem; font-weight: 300; color: var(--c-cream);
+    line-height: 1.25; margin-bottom: .6rem;
+  }
+  .modal-title em { font-style: italic; color: var(--c-gold-lt); }
+  .modal-sub {
+    font-size: .8rem; color: var(--c-mist); margin-bottom: 2rem; line-height: 1.6;
+  }
+  .modal-field { margin-bottom: 1.1rem; }
+  .modal-field label {
+    display: block; font-size: .65rem; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--c-mist); margin-bottom: .45rem;
+  }
+  .modal-field input {
+    width: 100%; padding: .75rem 1rem;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(201,168,76,.2);
+    color: var(--c-cream); font-family: 'Jost', sans-serif;
+    font-size: .9rem; font-weight: 300; outline: none;
+    transition: border-color .3s;
+  }
+  .modal-field input:focus { border-color: rgba(201,168,76,.55); }
+  .modal-field input::placeholder { color: var(--c-mist); opacity: .6; }
+  .modal-submit {
+    width: 100%; padding: .9rem;
+    background: var(--c-gold); color: var(--c-forest);
+    border: none; cursor: pointer;
+    font-family: 'Jost', sans-serif;
+    font-size: .72rem; font-weight: 500; letter-spacing: .22em;
+    text-transform: uppercase; margin-top: .5rem;
+    transition: background .3s;
+  }
+  .modal-submit:hover { background: var(--c-gold-lt); }
+  .modal-success {
+    display: none; text-align: center; padding: 1rem 0;
+  }
+  .modal-success-icon { font-size: 2.5rem; margin-bottom: .8rem; }
+  .modal-success-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-style: italic;
+    color: var(--c-cream); margin-bottom: .5rem;
+  }
+  .modal-success-sub { font-size: .8rem; color: var(--c-mist); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://guardiandebernal.com" class="nav-brand">
+    El <span>Guardián</span> de Bernal
+  </a>
+  <div class="nav-actions">
+    <a href="https://guardiandebernal.com" class="nav-back">
+      ← Sitio principal
+    </a>
+    <a href="https://wa.me/5212721980475?text=Hola%20Ari%2C%20me%20interesa%20el%20retiro%20Galaxia%20Interior%20en%20Fort%C3%ADn%20de%20las%20Flores%2C%20Julio%202025" class="nav-cta" target="_blank">
+      Reservar lugar
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-hint-line"></div>
+  </div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Retiro · Julio 2025 · Fortín de las Flores, Veracruz</p>
+    <h1 class="hero-title">
+      <em>Cristales</em><br>de la Galaxia
+    </h1>
+    <p class="hero-sub">con Carlos Martínez Montes, Guardián de la Peña de Bernal</p>
+    <div class="hero-meta">
+      <div class="hero-stat">
+        <div class="hero-stat-num">2</div>
+        <div class="hero-stat-label">Días</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">∞</div>
+        <div class="hero-stat-label">Presencia</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-dates">
+        <strong>25 – 26 de Julio</strong><br>El Jardín de la Salud
+      </div>
+    </div>
+    <a href="https://wa.me/5212721980475?text=Hola%20Ari%2C%20me%20interesa%20el%20retiro%20Galaxia%20Interior%20en%20Fort%C3%ADn%20de%20las%20Flores%2C%20Julio%202025" class="hero-btn" target="_blank">
+      Reservar mi lugar →
+    </a>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-band fade-up">
+  <p class="quote-text">
+    "Más que recordarte, vengo a activar lo que<br>en ti ya está listo para despertar."
+  </p>
+  <p class="quote-attr">Carlos Martínez · El Guardián</p>
+</div>
+
+<!-- LA EXPERIENCIA -->
+<section style="background: var(--c-forest);">
+  <div class="section-inner">
+    <div class="exp-grid">
+      <div class="fade-up">
+        <p class="section-label">La experiencia</p>
+        <h2 class="section-title">Un viaje hacia<br><em>adentro</em></h2>
+        <p class="section-body">
+          Un retiro para reconectar con tu esencia, pausar el ritmo cotidiano y abrir espacio a la claridad interior.
+        </p>
+        <br>
+        <p class="section-body">
+          Durante 2 días vivirás una experiencia consciente en comunidad, rodeado de la naturaleza exuberante de Fortín de las Flores — el "Jardín de México" — y la energía curativa de El Jardín de la Salud.
+        </p>
+        <br>
+        <p class="section-body">
+          Sumérgete en prácticas de introspección, conexión espiritual y momentos de presencia plena — guiados por el Guardián de la Peña en un espacio eco-turístico único en el corazón de Veracruz.
+        </p>
+      </div>
+      <div class="exp-img fade-up" style="transition-delay:.15s">
+        <img src="https://raw.githubusercontent.com/alexitimia-online/guardian/main/eventos/ari_galaxia/docs/fortin02.jpeg" alt="Cristales de la Galaxia — Fortín de las Flores" loading="lazy">
+        <div class="exp-img-border"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO DEL LUGAR -->
+<div class="video-section fade-up">
+  <div class="video-inner">
+    <div class="video-wrap">
+      <iframe
+        src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FMonitorVeracruz%2Fvideos%2F471922460853757%2F&show_text=false&width=560&t=0"
+        scrolling="no"
+        frameborder="0"
+        allowfullscreen="true"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+      ></iframe>
+    </div>
+    <div class="video-text">
+      <p class="section-label">El lugar</p>
+      <h2 class="section-title">El Jardín<br><em>de la Salud</em></h2>
+      <p class="section-body">
+        Un sitio eco-turístico enclavado en el Camino a Mata Larga, en el municipio de Fortín de las Flores, Veracruz. Un espacio que respira naturaleza, calma y posibilidades de sanación.
+      </p>
+      <br>
+      <p class="section-body">
+        Rodeado de vegetación tropical, con senderos, jardines de herbolaria y un ambiente perfecto para el silencio interior — el marco ideal para este retiro de reconexión y expansión.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- INVERSIÓN -->
+<section style="background: var(--c-deep);">
+  <div class="section-inner">
+    <p class="section-label fade-up">Inversión · Paquete completo</p>
+    <h2 class="section-title fade-up">Todo lo que<br><em>necesitas</em></h2>
+    <p class="section-body fade-up" style="margin-bottom: 3rem;">Una experiencia sin distracciones</p>
+
+    <div class="inversion-wrap fade-up">
+      <div class="price-display">$4,000 <span style="font-size:.45em; color: var(--c-mist);">MXN</span></div>
+      <p class="price-label">Por persona · Paquete completo</p>
+      <ul class="includes-list">
+        <li>Acceso completo a las actividades y experiencias del retiro</li>
+        <li>Actividades y experiencias guiadas por el Guardián de la Peña</li>
+        <li>Uso de las instalaciones de El Jardín de la Salud</li>
+        <li>Grupo íntimo · Espacios limitados</li>
+      </ul>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMA -->
+<section style="background: var(--c-forest);">
+  <div class="section-inner">
+    <p class="section-label fade-up">Programa</p>
+    <h2 class="section-title fade-up">Dos días de<br><em>transformación</em></h2>
+
+    <div class="programa-grid fade-up" style="margin-top: 3rem;">
+      <!-- Día 1 -->
+      <div class="dia-card featured">
+        <div class="dia-num">01</div>
+        <div class="dia-name">Sábado 25 de Julio</div>
+        <ul class="dia-items">
+          <li class="dia-item">
+            <div class="dia-item-time">Mañana</div>
+            <div class="dia-item-text">Llegada y bienvenida</div>
+            <div class="dia-item-sub">Recepción en El Jardín de la Salud</div>
+          </li>
+          <li class="dia-item">
+            <div class="dia-item-time">Mañana / Tarde</div>
+            <div class="dia-item-text">Apertura del retiro</div>
+            <div class="dia-item-sub">Intención, presencia y conexión grupal</div>
+          </li>
+          <li class="dia-item">
+            <div class="dia-item-time">Tarde</div>
+            <div class="dia-item-text">Sesión principal con el Guardián</div>
+          </li>
+          <li class="dia-item">
+            <div class="dia-item-time">Noche</div>
+            <div class="dia-item-text">Actividades de integración y comunidad</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Día 2 -->
+      <div class="dia-card">
+        <div class="dia-num">02</div>
+        <div class="dia-name">Domingo 26 de Julio</div>
+        <ul class="dia-items">
+          <li class="dia-item">
+            <div class="dia-item-time">Mañana</div>
+            <div class="dia-item-text">Prácticas de reconexión</div>
+            <div class="dia-item-sub">Meditación y presencia en naturaleza</div>
+          </li>
+          <li class="dia-item">
+            <div class="dia-item-time">Mañana / Tarde</div>
+            <div class="dia-item-text">Sesión de cierre con Carlos</div>
+          </li>
+          <li class="dia-item">
+            <div class="dia-item-time">Tarde</div>
+            <div class="dia-item-text">Cierre del retiro</div>
+            <div class="dia-item-sub">Integración y despedida</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EL LUGAR FULL -->
+<div class="lugar-section">
+  <div class="lugar-bg"></div>
+  <div class="lugar-content fade-up">
+    <h2 class="lugar-name">Fortín de las Flores</h2>
+    <p class="lugar-sub">Veracruz, México · El Jardín de la Salud · Camino a Mata Larga</p>
+    <a href="https://www.facebook.com/ElJardinDeLaSaludFortin" class="lugar-link" target="_blank">
+      Ver en Facebook →
+    </a>
+  </div>
+</div>
+
+<!-- EL LUGAR / HOSPEDAJE -->
+<section style="background: var(--c-deep);">
+  <div class="section-inner">
+    <div class="hospedaje-grid">
+      <div class="fade-up">
+        <p class="section-label">El lugar</p>
+        <h2 class="section-title">El Jardín<br><em>de la Salud</em></h2>
+        <p class="section-body">
+          Un sitio eco-turístico en Fortín de las Flores, Veracruz — municipio conocido como el "Jardín de México" por su exuberante vegetación, flores y clima privilegiado.
+        </p>
+        <br>
+        <p class="section-body" style="font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--c-cream);">
+          Fortín de las Flores, Veracruz — entre cafetales, flores y la energía de la sierra veracruzana.
+        </p>
+        <div class="amenidades">
+          <div class="amenidad"><span class="amenidad-dot"></span> Entorno eco-turístico</div>
+          <div class="amenidad"><span class="amenidad-dot"></span> Senderos en naturaleza</div>
+          <div class="amenidad"><span class="amenidad-dot"></span> Jardín de herbolaria</div>
+          <div class="amenidad"><span class="amenidad-dot"></span> Ambiente de descanso</div>
+          <div class="amenidad"><span class="amenidad-dot"></span> Spa y wellness</div>
+          <div class="amenidad"><span class="amenidad-dot"></span> Estacionamiento</div>
+        </div>
+      </div>
+      <div class="fade-up" style="transition-delay:.15s;">
+        <div class="exp-img">
+          <img
+            src="https://raw.githubusercontent.com/alexitimia-online/guardian/main/eventos/ari_galaxia/docs/fortin03.jpeg"
+            alt="El Jardín de la Salud Fortín"
+            loading="lazy"
+            style="aspect-ratio:4/5;"
+          >
+          <div class="exp-img-border"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQs -->
+<section style="background: var(--c-deep);">
+  <div class="section-inner">
+    <p class="section-label fade-up">Preguntas frecuentes</p>
+    <h2 class="section-title fade-up">¿Tienes<br><em>dudas?</em></h2>
+
+    <div class="faq-list fade-up" style="margin-top: 3rem;">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>¿Necesito experiencia previa en retiros o meditación?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          No. Este retiro está diseñado para cualquier persona que sienta el llamado a reconectar consigo misma. No importa si es tu primera vez — Carlos guía el proceso con presencia y cuidado para que cada participante pueda vivir la experiencia desde donde está.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>¿Qué debo llevar?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          Ropa cómoda para actividades en interiores y exteriores, calzado adecuado para senderos, bloqueador solar, una libreta si deseas escribir, y lo más importante: disposición y mente abierta. Para actividades específicas te informaremos con anticipación.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>¿El retiro incluye hospedaje?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          El retiro se lleva a cabo en las instalaciones de El Jardín de la Salud. El hospedaje puede coordinar opciones cercanas para quienes vienen de fuera — escríbenos para orientarte sobre las mejores alternativas según tu presupuesto y preferencias.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>¿Qué pasa si tengo que cancelar?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          Debido al grupo pequeño y los costos fijos del retiro, no se realizan devoluciones del anticipo en caso de cancelación. En situaciones extraordinarias, puedes consultar la posibilidad de transferir tu lugar a otra persona.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>¿A quién contacto para más información?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          Puedes escribirle directamente a través de WhatsApp al número que aparece en esta página. Ahí podrás resolver cualquier duda sobre el programa, la logística o los pagos.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<div class="cta-final">
+  <p class="section-label fade-up" style="justify-content: center;">Reserva tu lugar</p>
+  <h2 class="section-title fade-up">Este retiro es una invitación<br>a <em>expandirte hacia adentro</em></h2>
+  <p class="cta-final-sub fade-up">Tu presencia, tu intención y tu conexión contigo mismo.<br>Espacios limitados.</p>
+
+  <div class="cta-group fade-up">
+    <a
+      href="https://wa.me/5212721980475?text=Hola%20Ari%2C%20me%20interesa%20el%20retiro%20Galaxia%20Interior%20en%20Fort%C3%ADn%20de%20las%20Flores%2C%20Julio%202025"
+      class="btn-primary"
+      target="_blank"
+    >
+      Escribir a WhatsApp →
+    </a>
+  </div>
+
+  <div class="cta-contacto fade-up">
+    <strong>Ari Blanno · Coordinación del retiro</strong>
+    <a href="https://wa.me/5212721980475">+52 1 272 198 0475</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="https://guardiandebernal.com" class="footer-brand">
+    El <span>Guardián</span> de Bernal · <span style="color: var(--c-mist);">guardiandebernal.com</span>
+  </a>
+  <p class="footer-copy">Retiro · Julio 2025 · Fortín de las Flores, Veracruz</p>
+</footer>
+
+<!-- MODAL DESCARGA PDF -->
+<div class="modal-overlay" id="pdfModal" onclick="closeModalOutside(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">×</button>
+
+    <div id="modalForm">
+      <p class="modal-label">Programa completo</p>
+      <h3 class="modal-title">Recibe el PDF<br><em>del retiro</em></h3>
+      <p class="modal-sub">Déjanos tu nombre y correo para enviarte el programa completo y mantenerte informado sobre el retiro.</p>
+
+      <div class="modal-field">
+        <label for="m-nombre">Nombre</label>
+        <input type="text" id="m-nombre" placeholder="Tu nombre completo" autocomplete="name">
+      </div>
+      <div class="modal-field">
+        <label for="m-email">Correo electrónico</label>
+        <input type="email" id="m-email" placeholder="tu@correo.com" autocomplete="email">
+      </div>
+
+      <button class="modal-submit" onclick="handleDownload()">
+        Descargar programa →
+      </button>
+    </div>
+
+    <div class="modal-success" id="modalSuccess">
+      <div class="modal-success-icon">✦</div>
+      <p class="modal-success-text">¡Descarga iniciada!</p>
+      <p class="modal-success-sub">Gracias, <span id="successName"></span>. El programa se está descargando.<br>Te esperamos en Fortín.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Intersection Observer para fade-up
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+  // Modal
+  function openModal() {
+    document.getElementById('pdfModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => document.getElementById('m-nombre').focus(), 100);
+  }
+  function closeModal() {
+    document.getElementById('pdfModal').classList.remove('active');
+    document.body.style.overflow = '';
+    setTimeout(() => {
+      document.getElementById('modalForm').style.display = '';
+      document.getElementById('modalSuccess').style.display = 'none';
+      document.getElementById('m-nombre').value = '';
+      document.getElementById('m-email').value = '';
+    }, 300);
+  }
+  function closeModalOutside(e) {
+    if (e.target === document.getElementById('pdfModal')) closeModal();
+  }
+  function handleDownload() {
+    const nombre = document.getElementById('m-nombre').value.trim();
+    const email  = document.getElementById('m-email').value.trim();
+
+    const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!nombre) {
+      document.getElementById('m-nombre').style.borderColor = 'rgba(201,100,80,.6)';
+      document.getElementById('m-nombre').focus();
+      return;
+    }
+    if (!emailRx.test(email)) {
+      document.getElementById('m-email').style.borderColor = 'rgba(201,100,80,.6)';
+      document.getElementById('m-email').focus();
+      return;
+    }
+
+    document.getElementById('m-nombre').style.borderColor = '';
+    document.getElementById('m-email').style.borderColor = '';
+
+    // Enviar a Brevo lista #10 (no-cors: fire-and-forget)
+    const fd = new FormData();
+    fd.append('FIRSTNAME', nombre);
+    fd.append('EMAIL', email);
+    fd.append('email_address_check', '');
+    fd.append('locale', 'es');
+    fd.append('html_type', 'simple');
+    fetch(
+      'https://e4152291.sibforms.com/serve/MUIFAFUht2aTTmabEEb6odNnCiPY1Ypf_CzEHkM92aoZ13T2EPguYJ_OQEJJCCRvRoRczHOt9Wzonfc_NlrcJg9hDZ6sd-K_9pEKk1HQr1c95ZKHSxKglRYziK9RpkIcm1uVpY7T5HNNRj8u2WzOQq5XBC3LAnmUsdb6DARi6iCOpfbxLrnzY2lOaJKIEPTL7iB07-NpMumL9ZUBsA==',
+      { method: 'POST', body: fd, mode: 'no-cors' }
+    ).catch(() => {});
+
+    // Mostrar pantalla de éxito
+    document.getElementById('modalForm').style.display = 'none';
+    document.getElementById('successName').textContent = nombre.split(' ')[0];
+    document.getElementById('modalSuccess').style.display = 'block';
+
+    // Disparar descarga del PDF
+    const pdfUrl = 'https://raw.githubusercontent.com/alexitimia-online/guardian/main/Galaxia_Interior_Fortin_Julio2025.pdf';
+    fetch(pdfUrl)
+      .then(r => r.blob())
+      .then(blob => {
+        const url  = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href     = url;
+        link.download = 'Galaxia_Interior_Fortin_Julio2025.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        setTimeout(() => URL.revokeObjectURL(url), 10000);
+      })
+      .catch(() => {
+        window.open(pdfUrl, '_blank');
+      });
+
+    setTimeout(closeModal, 3500);
+  }
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  // FAQs
+  function toggleFaq(btn) {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    document.querySelectorAll('.faq-q.open').forEach(b => {
+      b.classList.remove('open');
+      b.nextElementSibling.classList.remove('open');
+    });
+    if (!isOpen) {
+      btn.classList.add('open');
+      answer.classList.add('open');
+    }
+  }
+</script>
+</body>
+</html>
